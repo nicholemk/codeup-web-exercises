@@ -1,0 +1,49 @@
+.fancy-header {
+    color: purple;
+    text-decoration: underline;
+}
+
+h1{
+    text-align: center;
+}
+
+h1, h2{
+    text-decoration: underline;
+    color: blue;
+}
+
+body{
+    background: linear-gradient(pink, white);
+    font-family: sans-serif;
+}
+
+
+ul {
+    list-style: square;
+}
+
+
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+
+#prices th, td{
+    border: 5px solid black;
+}
+
