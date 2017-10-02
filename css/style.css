@@ -1,20 +1,23 @@
 .fancy-header {
-    color: purple;
+    color: mediumaquamarine;
     text-decoration: underline;
 }
 
-h1{
+h1, p {
     text-align: center;
+    color: mediumaquamarine;
 }
 
 h1, h2{
     text-decoration: underline;
-    color: blue;
+    color: black;
 }
 
 body{
-    background: linear-gradient(pink, white);
-    font-family: sans-serif;
+    background: linear-gradient(white, lightgrey);
+    font-family: "Helvetica", "Arial", sans-serif;
+    margin: 0 auto;
+    max-width: 50em;
 }
 
 
@@ -22,10 +25,13 @@ ul {
     list-style: square;
 }
 
+#photos, #vision{
+    text-align: center;
+}
 
 /* unvisited link (:link) */
 a:link {
-    color:red;
+    color:blue;
 }
 
 /* visited link (:visited) */
@@ -35,15 +41,15 @@ a:visited {
 
 /* mouse hover over link (:hover) */
 a:hover {
-    color:blue;
+    color:darkred;
 }
 
 /* active/selected link (:active) */
 a:active {
-    color:green;
+    color:white;
 }
 
 #prices th, td{
-    border: 5px solid black;
+    border: 3px solid black;
 }
 
