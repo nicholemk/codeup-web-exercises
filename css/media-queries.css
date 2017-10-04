@@ -11,6 +11,12 @@ h1{
     text-align: center;
 }
 
+.alert-info{
+    background-color: #c6ffff;
+    /*border: 2px solid black;*/
+    padding: 1em;
+    text-align: center;
+}
 
 .alert-info > a{
     color: #000;
@@ -27,18 +33,16 @@ h1{
     text-align: center;
     margin-bottom: .5em;
     list-style: none;
+    margin: 5px;
 }
 
-.header-img img{
-    width: 100%;
-}
+/*.header-img img{*/
+    /*width: 100%;*/
+/*}*/
 
 .sub-section{
     font-style: italic;
 }
-
-
-
 
 /* Style definitions that target screens 768px and up */
 
@@ -69,7 +73,7 @@ h1{
 
     #main {
         float: left;
-        width: 66%;
+        /*width: 66%;*/
     }
 
     .alert-info{
@@ -78,7 +82,7 @@ h1{
 
     .sub-section{
         float: right;
-        width: 33%
+        /*width: 33%*/
     }
 
     footer>p{
