@@ -1,55 +1,79 @@
+/* Reset Styles */
+
 html, body{
     margin: 0;
-    width: 100%
     height: 100%;
     font-family: sans-serif;
+    padding 5px;
+}
+
+h1{
+    text-align: center;
+}
+
+
+.alert-info > a{
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-links{
+    padding-left: 0;
+}
+
+.nav-links li{
+    background-color: #d3d3d3;
+    padding: 1em;
+    text-align: center;
+    margin-bottom: .5em;
+    list-style: none;
+}
+
+.header-img img{
+    width: 100%;
+}
+
+.sub-section{
+    font-style: italic;
 }
 
 
 
-/* Small devices (iphone, 768px and up) */
-@media screen and (max-width:768px) {
-    .header-img{
-        clear: both;
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: auto;
-        margin-right: auto;
 
-    }
+/* Style definitions that target screens 768px and up */
 
-    img{
-        width: 90%;
-    }
-
-    .nav-links li{
-        list-style: none;
-    }
-
-    .main .sub-section{
-        clear: both;
-    }
-
-    .alert-info{
-        display: none;
-    }
-
-    h1, ul, li{
-        text-align: center;
-    }
-
-    ul{
-        list-style: none;
-    }
-}
-
-
-
-/* Medium devices (desktops, 992px and up) */
 @media screen and (min-width:768px) {
 
     body{
         padding: 10px;
+        height: 100%;
+    }
+
+    .nav-links{
+        float: right;
+        text-align: right;
+    }
+
+    .nav-links li{
+        display: inline-block;
+        background-color: transparent;
+        padding: .2em;
+        line-height: 2em;
+        float: left;
+    }
+
+    h1{
+        float: left;
+        text-align: left;
+    }
+
+    #main {
+        float: left;
+        width: 66%;
+    }
+
+    .alert-info{
+        display: none;
     }
 
     .sub-section{
@@ -57,32 +81,9 @@ html, body{
         width: 33%
     }
 
-    .nav-links{
-        float: right;
-    }
-
-    .header-img {
-        clear: both;
-    }
-
-    .header-img{
-        width: 890px;
-        height: 385px;
-    }
-
-    .main{
-        float: left;
-        width: 66%;
-
     footer>p{
         clear: both;
         position: relative;
-    }
-
-    ul, li{
-        float: right;
-        list-style-type: none;
-        padding: 5px;
     }
 
 }
