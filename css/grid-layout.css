@@ -1,0 +1,45 @@
+.container {
+    max-width: 1200px;
+    min-height: 100vh;
+    width: 70%;
+    background-color: red;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.row{
+    width: 100%;
+    background-color: powderblue;
+}
+
+.col-50{
+    width: 50%;
+    float: left;
+    background-color: mediumaquamarine;
+}
+
+
+.col-30{
+    width: 33.3%;
+    float: left;
+    background-color: pink;
+}
+
+.col-25{
+    width: 25%;
+    float: left;
+    background-color: orange;
+}
+
+.col-12{
+    width: 12.5%;
+    float: left;
+    background-color: greenyellow;
+}
+
+.box{
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+}
