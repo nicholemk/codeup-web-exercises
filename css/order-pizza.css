@@ -6,10 +6,6 @@ h1 {
 
 }
 
-.jumbotron {
-    background-image: url("http://java.codeup.com/examples/bootstrap/pizza.png");
-}
-
 .container {
     width: 100%;
     padding-right: 0;
@@ -23,4 +19,8 @@ h1 {
 
 .checkbox {
     margin-top: 0;
+}
+
+.jumbotron {
+    background-image: url("http://java.codeup.com/examples/bootstrap/pizza.png");
 }
