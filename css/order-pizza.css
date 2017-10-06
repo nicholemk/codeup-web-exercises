@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    background-color: #eeeeee;
+    opacity: 0.7;
+    text-decoration: solid;
+
+}
+
+.jumbotron {
+    background-image: url("http://java.codeup.com/examples/bootstrap/pizza.png");
+}
+
+.container {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.radio, .checkbox, .sauce, .cheese, .crust, .toppings {
+    background-color: #d9edf7;
+    color: #31708f;
+}
+
+.checkbox {
+    margin-top: 0;
+}
