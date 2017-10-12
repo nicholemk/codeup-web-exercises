@@ -1,45 +1,55 @@
+/*Mobile First*/
+/*Styling for > 768 px > 1200 px */
+
+
 .container {
     max-width: 1200px;
     min-height: 100vh;
-    width: 70%;
-    background-color: red;
+    width: 80%;
     margin: 0 auto;
     padding: 10px;
 }
 
 .row{
     width: 100%;
-    background-color: powderblue;
 }
 
-.col-50{
-    width: 50%;
+.row:after{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.col-50, .col-30, .col-25, .col-12{
+    width: 100%;
     float: left;
-    background-color: mediumaquamarine;
 }
 
 
-.col-30{
-    width: 33.3%;
-    float: left;
-    background-color: pink;
-}
+@media screen and (min-width: 768px) {
 
-.col-25{
-    width: 25%;
-    float: left;
-    background-color: orange;
-}
+    .col-50{
+        width: 50%;
+    }
 
-.col-12{
-    width: 12.5%;
-    float: left;
-    background-color: greenyellow;
-}
+    .col-30{
+        width: 33.3%;
+    }
 
-.box{
-    border: 1px solid black;
-    box-sizing: border-box;
-    padding: 5px;
-    text-align: center;
+    .col-25{
+        width: 25%;
+    }
+
+    .col-12{
+        width: 12.5%;
+    }
+
+    .col-66{
+        width: 66%;
+    }
+
+    .box{
+        box-sizing: border-box;
+        padding: 5px;
+    }
 }
