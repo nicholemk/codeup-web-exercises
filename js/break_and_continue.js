@@ -1,10 +1,10 @@
 "use strict"
 
-// prompt("Enter an odd number between 1 and 50");
+// prompt("Enter an odd number between 1 and 50"); ** need working prompt. done
 
-var random = Math.floor((Math.random()*50)+1);
+var userNumber = parseFloat(prompt("Enter a number"));
 
-console.log("Random odd number to skip is: " + random);
+console.log("Number to skip is: " + userNumber);
 
 for (var i = 1; i <= 50; i++) {
 
@@ -12,7 +12,11 @@ for (var i = 1; i <= 50; i++) {
         // Skip the even numbers.
         continue;
     }
-    if (random === i) {
+
+    // console.log (typeof userNumber); (to check type of)
+
+
+    if (userNumber === i) {
         console.log("Yikes! Skipping number: " + i);
     } else {
         console.log("Here is an odd number: " + i);
