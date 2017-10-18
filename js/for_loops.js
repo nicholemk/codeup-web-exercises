@@ -11,7 +11,7 @@ function showMultiplicationTable(number){
 
 showMultiplicationTable(7);
 showMultiplicationTable(8);
-showMultiplicationTable(9);
+// showMultiplicationTable(9);
 
 
 //#2 20-200 done

@@ -14,7 +14,7 @@ for (var i = 1; i <= 50; i++) {
     }
 
     // console.log (typeof userNumber); (to check type of)
-
+    //
 
     if (userNumber === i) {
         console.log("Yikes! Skipping number: " + i);
