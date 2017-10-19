@@ -32,19 +32,20 @@ for (var i = 1; i <= 10; i++) {
 //#3 diamond done
 
 
-// for (var i = 0; i <= 9; i++){
-//
-//     var a = "";
-//     // console.log("");
-//
-//     for (var j = 0; j < i; j++){
-//
-//         var a = a + "" + i
-//         // console.log();
-//     }
-//
-//     console.log(a)
-// }
+for (var i = 0; i <= 9; i++){
+
+    var a = "";
+    // console.log("");
+
+    for (var j = 0; j < i; j++){
+
+        var a = a + "" + i
+        // console.log();
+    }
+
+    console.log(a)
+}
+
 
 
 //* diamond*
