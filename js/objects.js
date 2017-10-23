@@ -12,28 +12,43 @@
      *  > console.log(person.firstName) // "Sanchez"
      */
 
-    // var person = {};
-    // person.firstName = "Nichole";
-    // person.lastName = "Kirlin";
+    var person = {};
+    person.firstName = "Nichole";
+    person.lastName = "Kirlin";
+    console.log(person.firstName);
+    console.log(person.lastName);
+
+    // var person = {
+    //     firstName = "Nichole";
+    //     lastName = "Kirlin";
+    // }
     // console.log(person.firstName);
     // console.log(person.lastName);
-    //
-    //
-    // /**
-    //  * TODO:
-    //  * Add a sayHello method to the person object that returns a greeting using
-    //  * the firstName and lastName properties.
-    //  * console.log the returned message to check your work
-    //  *
-    //  * Example
-    //  * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
-    //  */
-    //
+
+    /**
+     * TODO:
+     * Add a sayHello method to the person object that returns a greeting using
+     * the firstName and lastName properties.
+     * console.log the returned message to check your work
+     *
+     * Example
+     * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
+     */
+
+
     // function sayHello() {
     //     return person.firstName + person.lastName + " says hello!"
     // }
     //
     // console.log(sayHello);
+
+
+    person.sayHello = function() {
+        return "Hello from " + person.firstName + " " + person.lastName + "!"
+    };
+
+    console.log(person.sayHello());
+
 
 
 
@@ -51,39 +66,39 @@
      * and console.log the relevant messages for each person
      */
 
-//     var shoppers = [
-//         {name: 'Cameron', amount: 180},
-//         {name: 'Ryan', amount: 250},
-//         {name: 'George', amount: 320}
-//     ];
-//
-//     console.log(shoppers);
-//
-//     function calculateDiscountedAmount(amount) {
-//         if {
-//         (amount <= 200, return amount + (12%));
-//     } else {
-//         (return amount + 0);
-//     }
-// }
-//
-//     var getInfo = function() {
-//         return "Customer name: " + shoppers[0].name + "Purchase total: " + shoppers[0].amount + "Discount Amount: " + calculateDiscountedAmount(shoppers[0].amount);
-// };
-//
-//     getInfo();
-//
-//         shoppers.forEach(function(array));
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    var discountThreshold = 200;
+    var discountPercentage = .12;
+
+    function calculateDiscount(amount, discountThreshold, discountPercentage) {
+        if (amount > 200) {
+            return amount - (amount * discountPercentage);
+        } else {
+            return amount;
+        }
+    }
+
+    console.log(calculateDiscount(320, discountThreshold, discountPercentage));
 
 
+    function outputShopperInfo(arr) {
 
+        arr.forEach(function(shopper) {
+            var message = shopper.name + " spent ";
+            message += shopper.amount + " and received a discount of ";
+            message += shopper.amount - calculateDiscount(shopper.amount, discountThreshold, discountPercentage);
+            message += " and paid " + calculateDiscount(shopper.amount, discountThreshold, discountPercentage);
+                console.log(message);
+        });
 
+    }
 
-
-
-
-
-
+    outputShopperInfo(shoppers);
 
 
     /** TODO:
@@ -99,48 +114,48 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    //
-    // var books = [
-    //     {
-    //         title: "Game of Thrones",
-    //         author: {
-    //             firstName: "George",
-    //             lastName: "Martin"
-    //         }
-    //     },
-    //     {
-    //         title: "Harry Potter",
-    //         author: {
-    //             firstName: "JK",
-    //             lastName: "Rowling"
-    //         }
-    //     },
-    //     {
-    //         title: "Milk and Honey",
-    //         author: {
-    //             firstName: "Rupi",
-    //             lastName: "Kaur"
-    //         }
-    //     },
-    //     {
-    //         title: "A Piece of Cake",
-    //         author: {
-    //             firstName: "Cupcake",
-    //             lastName: "Brown"
-    //         }
-    //     },
-    //     {
-    //         title: "Lion",
-    //         author: {
-    //             firstName: "Saroo",
-    //             lastName: "Brierley"
-    //         }
-    //     }
-    // ];
-    //
-    // console.log(books[0].title);
-    // console.log(books[2].author.firstName);
-    // console.log(books[3].author.lastName);
+
+    var books = [
+        {
+            title: "Game of Thrones",
+            author: {
+                firstName: "George",
+                lastName: "Martin"
+            }
+        },
+        {
+            title: "Harry Potter",
+            author: {
+                firstName: "JK",
+                lastName: "Rowling"
+            }
+        },
+        {
+            title: "Milk and Honey",
+            author: {
+                firstName: "Rupi",
+                lastName: "Kaur"
+            }
+        },
+        {
+            title: "A Piece of Cake",
+            author: {
+                firstName: "Cupcake",
+                lastName: "Brown"
+            }
+        },
+        {
+            title: "Lion",
+            author: {
+                firstName: "Saroo",
+                lastName: "Brierley"
+            }
+        }
+    ];
+
+    console.log(books[0].title);
+    console.log(books[2].author.firstName);
+    console.log(books[3].author.lastName);
 
 
 
@@ -171,12 +186,12 @@
 
 
 
-    // books.forEach(function(book, index){
-    //     console.log("#" + (index + 1));
-    //     console.log(book.title);
-    //     console.log(book.author.firstName + " " + book.author.lastName);
-    //     console.log("--");
-    // })
+    books.forEach(function(book, index){
+        console.log("#" + (index + 1));
+        console.log(book.title);
+        console.log(book.author.firstName + " " + book.author.lastName);
+        console.log("--");
+    })
 
 
 
@@ -195,11 +210,11 @@
 
 
 
-    function createBook(book){
-        return book;
-}
-
-console.log(createBook("Deep South"))
+//     function createBook(title, author){
+//         return book;
+// }
+//
+// console.log(createBook("Deep South"))
 
 
 
