@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+<!-- div to hold map -->
+<div id="map-canvas"></div>
+
+<!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Fq2UspbtyX0spv_22WGd4ChnxFIQREQ"></script>
+
+<!-- Script to show address on map -->
+<script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 5,
+
+            // This sets the center of the map at our location
+            center: {
+                lat: 29.4178,
+                lng: -98.4881
+            }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var geocoder = new google.maps.Geocoder();
+
+//        geocode(request:GeocoderRequest, callback:function(Array.<GeocoderResult>, GeocoderStatus))
+
+        // Include code from previous example
+
+//        // Set our address to geocode
+//        var address = "604 S Alamo, San Antonio, TX, 78210";
+
+        // Set our address to geocode
+        var address = "321 W 51st St, New York, NY 10019";
+
+        // Init geocoder object
+        var geocoder = new google.maps.Geocoder();
+
+        // Geocode our address
+        geocoder.geocode({ "address": address }, function(results, status) {
+
+            // Check for a successful result
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                // Recenter the map over the address
+                map.setCenter(results[0].geometry.location);
+            } else {
+
+                // Show an error message with the status if our request fails
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+
+//        // Create a new infoWindow object with content
+//        var infowindow = new google.maps.InfoWindow({
+//            content: "The best lamb chops in all of SA. www.battalionsa.com"
+//        });
+//
+//        // Create lat and long for our marker position
+        var codeup = { lat: 29.4178, lng: -98.4881 };
+
+        // Create a new infoWindow object with content
+        var infowindow = new google.maps.InfoWindow({
+            content: "The best ramen in all of NYC!"
+        });
+
+        // Create lat and long for our marker position
+        var codeup = { lat: 40.7635, lng: -73.9866 };
+
+// Add the marker to our existing map
+        var marker = new google.maps.Marker({
+            position: codeup,
+            map: map
+        });
+
+// Open the window using our map and marker
+        infowindow.open(map, marker);
+
+
+    })();
+</script>
+</body>

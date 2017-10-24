@@ -11,7 +11,6 @@
 <button id="changeListBtn">change list</button>
 <button id="changeParBtn">change paragraph</button>
 
-
 <h1 id="main-header">Hello World!</h1>
 <ul id="listItems">
     <li data-dbid="1">Item 1</li>
@@ -20,6 +19,7 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -79,7 +79,6 @@
         // TODO: Set text color of li with dbid = 1 to blue
 
 
-
         function changePar() {
             // TODO: Uncomment the next line and get all elements with class name sub-paragraph
             var subParagraphs = document.getElementsByClassName("sub-paragraph");
@@ -88,14 +87,10 @@
             subParagraphs[0].innerHTML = "Mission Accomplished!";
         }
 
-
-
     changeHeaderBtn.addEventListener("click", changeHeader);
     changeSubBtn.addEventListener("click", changeSub);
     changeListBtn.addEventListener("click", changeList);
     changeParBtn.addEventListener("click", changePar);
-
-
 
 
 //    })();
