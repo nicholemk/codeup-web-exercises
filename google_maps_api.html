@@ -67,25 +67,50 @@
 
 //        // Create a new infoWindow object with content
         var infowindow = new google.maps.InfoWindow({
-            content: "The best lamb chops in all of SA. www.battalionsa.com"
+            content: "The best lamb chops in all of SA. www.battalionsa.com -Spinach dumplings, Panna Cotta"
         });
 //
-//        // Create lat and long for our marker position
-        var codeup = { lat: 29.4178, lng: -98.4881 };
-
-        // Create a new infoWindow object with content
-//        var infowindow = new google.maps.InfoWindow({
-//            content: "The best ramen in all of NYC!"
-//        });
-
-        // Create lat and long for our marker position
-//        var codeup = { lat: 40.7635, lng: -73.9866 };
+//        // Create lat and long for our SA marker position
+        var battalion = { lat: 29.4178, lng: -98.4881 };
 
 // Add the marker to our existing map
-        var marker = new google.maps.Marker({
-            position: codeup,
-            map: map
+        var infowindow = new google.maps.Marker({
+            position: battalion,
+            map: map,
+            animation: google.maps.Animation.DROP
         });
+
+//         Create a new infoWindow object with content
+        var infowindow = new google.maps.InfoWindow({
+            content: "The best ramen in all of NYC! -Eggplant steamed buns, shishito peppers with citrus salt, ramen with garlic oil"
+        });
+
+//         Create lat and long for our NYC marker position
+        var ippudo = { lat: 40.7635, lng: -73.9866 };
+
+        var marker = new google.maps.Marker({
+            position: ippudo,
+            map: map,
+            animation: google.maps.Animation.DROP
+        });
+
+//        marker = new google.maps.Marker({
+//            map: map,
+//            draggable: true,
+//            animation: google.maps.Animation.DROP,
+//            position: {lat: 59.327, lng: 18.067}
+//        });
+//        marker.addListener('click', toggleBounce);
+//    }
+
+    function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+        } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+    }
+
 
 // Open the window using our map and marker
         infowindow.open(map, marker);
