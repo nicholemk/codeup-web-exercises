@@ -23,7 +23,7 @@
         // Set our map options
         var mapOptions = {
             // Set the zoom level
-            zoom: 5,
+            zoom: 15,
 
             // This sets the center of the map at our location
             center: {
@@ -42,10 +42,10 @@
         // Include code from previous example
 
 //        // Set our address to geocode
-//        var address = "604 S Alamo, San Antonio, TX, 78210";
+        var address = "604 S Alamo, San Antonio, TX, 78210";
 
         // Set our address to geocode
-        var address = "321 W 51st St, New York, NY 10019";
+//        var address = "321 W 51st St, New York, NY 10019";
 
         // Init geocoder object
         var geocoder = new google.maps.Geocoder();
@@ -66,20 +66,20 @@
         });
 
 //        // Create a new infoWindow object with content
-//        var infowindow = new google.maps.InfoWindow({
-//            content: "The best lamb chops in all of SA. www.battalionsa.com"
-//        });
+        var infowindow = new google.maps.InfoWindow({
+            content: "The best lamb chops in all of SA. www.battalionsa.com"
+        });
 //
 //        // Create lat and long for our marker position
         var codeup = { lat: 29.4178, lng: -98.4881 };
 
         // Create a new infoWindow object with content
-        var infowindow = new google.maps.InfoWindow({
-            content: "The best ramen in all of NYC!"
-        });
+//        var infowindow = new google.maps.InfoWindow({
+//            content: "The best ramen in all of NYC!"
+//        });
 
         // Create lat and long for our marker position
-        var codeup = { lat: 40.7635, lng: -73.9866 };
+//        var codeup = { lat: 40.7635, lng: -73.9866 };
 
 // Add the marker to our existing map
         var marker = new google.maps.Marker({
