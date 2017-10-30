@@ -71,17 +71,17 @@ $(document).ready(function() {
 //------------------------------------------------
 //----------mouse events exercise-----------------
 
-$(".header").click(function () {
-    $("header").("background-color", "red");
-};
+$("h1").click(function () {
+    $("h1").css("background-color", "red");
+})
 
-$("p").dblclick(function(e)) {
-    alert("paragraph was double clicked");
-}
+$("p").dblclick(function() {
+    this.style.fontSize = "18px";
+})
 
 $(".list").hover(
     function() {
-        $(this).css("background-color", "red");
+        $(this).css("background-color", "black");
     },
     function() {
         $(this).css("background-color", "white");
