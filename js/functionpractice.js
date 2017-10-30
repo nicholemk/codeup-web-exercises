@@ -100,15 +100,15 @@
 
 //     Write a function called `reverse(input)` that takes a string and returns it reversed.
 
-function reverseString(str) {
-    return str;
-}
-reverseString("hello");
-console.log(reverseString("Hello Codeup"));
-
-//     Write a function called `isNumeric(input)` that takes an input and returns a boolean if the input is numeric.
-
-function isNumeric() {
+// function reverseString(str) {
+//     return str;
+// }
+// reverseString("hello");
+// console.log(reverseString("Hello Codeup"));
+//
+// //     Write a function called `isNumeric(input)` that takes an input and returns a boolean if the input is numeric.
+//
+// function isNumeric() {
 
 }
 
@@ -149,3 +149,109 @@ function isNumeric() {
 
 
 // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
+
+
+//------------------------------------------------------------------- 10/30
+
+
+// ================================= OBJECTS WARM UP
+//
+// In pairs, solve the following problems...
+//
+// ---- EXERCISE 1
+// 1. Write a function, deactivateMembers()
+// to take in the following array of objects as an input:
+
+    var members = [
+        {
+            joined: 2009,
+            name: "John",
+            activeMember: true
+        },
+        {
+            joined: 2011,
+            name: "Sally",
+            activeMember: true
+        },
+        {
+            joined: 2013,
+            name: "John",
+            activeMember: true
+        },
+    ];
+
+function deactivateMembers(members) {
+    arrayMembers.forEach(function (element, index, array){
+        element.activeMember = false;
+        element.dateDeactivated = "2017";
+    });
+
+    return arrayMembers;
+};
+deactivateMembers(members);
+
+
+
+
+//---------------
+
+function deactivateMEmbers(arrayOfMemberObjects) {
+    arrayOfMemberObjects.forEach(function(memberObject){
+        console.log(memberObject);
+    });
+    return arrayOfMemberObjects;
+
+}
+deactivateMembers(members);
+
+// The function should return an output of the same array of objects with all activeMember properties set to false
+// and contain an additional property of dateDeactivated set to 2017.
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---- EXERCISE 2
+// 1. Define an object, "canOfSoda", using dot syntax to add and assign the following properties:
+//
+//     - a property of isEmpty assigned a boolean value of false
+// - a property of isOpen assigned a boolean value of false
+// - a method of open() which sets the isOpen to true if the property is false when the method is initially called
+// - a method of pourOut() which sets the isEmpty to true if the isEmpty property is false and the isOpen is true
+//
+// 2. Define the above object again using object literal syntax.
+//
+
+
+
+var canOfSoda = new Object{};
+canOfSoda.isEmpty = false;
+canOfSoda.isOpen = false;
+canOfSoda =
+
+
+if {
+    canOfSoda
+}
+
+
+//     BONUS
+// 3. Create an array call cansOfSoda containing of 3 canOfSoda objects with the same properties and values as described above.
+//     The objects should be named, canOfSoda1, canOfSoda2, canOfSoda3.
+//
+// 4. Iterate over the cansOfSoda array and open() and pourOut() each canOfSoda object
+//
+// 5. Console log the cansOfSoda array to check if the methods worked correctly.
+
