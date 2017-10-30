@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>jQuery Practice</title>
 </head>
 <body>
 
-<h1 class="heading">This is jQuery practice</h1>
+<h1 class="codeup">This is jQuery practice</h1>
 
 <p id="mainparagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut corporis debitis delectus dolore eaque eius explicabo harum illo, ipsam, iste laboriosam officia omnis provident quis, reiciendis reprehenderit similique temporibus voluptas.</p>
 
-<div id="mydiv">This is a div</div>
+<div class="codeup" id="mydiv">This is a div</div>
 
-<div id=""mydiv">Another div</div>
+<div id=mydivsecond">Another div</div>
 
-<ul class="weekdays">
-    <li>Monday</li>
-    <li>Tuesday</li>
-    <li>Wednesday</li>
-    <li>Thursday</li>
-    <li>Friday</li>
+<ul class="codeup">
+    <li class="list">Monday</li>
+    <li class="list">Tuesday</li>
+    <li class="list">Wednesday</li>
+    <li class="list">Thursday</li>
+    <li class="list">Friday</li>
 </ul>
+
+<p>Here is another paragraph</p>
 
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -32,19 +34,37 @@ $(document).ready(function() {
     "use strict";
 //    alert("DOM is loaded");
 });
+//----------------step 1--------------------------
+//var mainpar = $("#mainparagraph");
+//
+//var mydiv = $("#mydiv");
+//
+//var weekdays = $("#weekdays");
+//
+//var mydivtwo = $(".mydivsecond");
+//
+//
+//    mainpar.html("New Paragraph");
+//
+//    mydiv.html("New div content");
+//
+//    weekdays.css("background-color", "blue");
+//
+//    mydivtwo.css("background-color", "grey");
+//------------------------------------------------
+//-------------step 2-----------------------------
 
-var mainpar = $("#mainparagraph");
+var codeup = $(".codeup");
 
-var mydiv = $("#mydiv");
+codeup.css("border", "1px solid red");
 
-var weekdays = $("#weekdays");
+//-------------------------------------------------
+//-----------------------step 3--------------------
 
+//var list = $(".list");
+//
+//list.css("font", "20px");
 
-    mainpar.html("New Paragraph");
-
-    mydiv.html("New div content");
-
-    weekdays.css("background-color", "blue");
 
 
 </script>
