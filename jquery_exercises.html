@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1 class="codeup">This is jQuery practice</h1>
+<h1 class="header">This is jQuery practice</h1>
 
 <p id="mainparagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut corporis debitis delectus dolore eaque eius explicabo harum illo, ipsam, iste laboriosam officia omnis provident quis, reiciendis reprehenderit similique temporibus voluptas.</p>
 
@@ -22,7 +22,7 @@
     <li class="list">Friday</li>
 </ul>
 
-<p>Here is another paragraph</p>
+<p class="paragraph">Here is another paragraph</p>
 
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -61,15 +61,32 @@ $(document).ready(function() {
 //-------------------------------------------------
 //-----------------------step 3--------------------
 
-var list = $(".list");
+//var list = $(".list");
+//
+//list.css("font", "20px");
+//
+//var highlight = $("h1, p, ul");
+//
+//highlight.css("background-color", "yellow");
+//------------------------------------------------
+//----------mouse events exercise-----------------
 
-list.css("font", "20px");
+$(".header").click(function () {
+    $("header").("background-color", "red");
+};
 
-var highlight = $("h1, p, ul");
+$("p").dblclick(function(e)) {
+    alert("paragraph was double clicked");
+}
 
-highlight.css("background-color", "yellow");
-
-
+$(".list").hover(
+    function() {
+        $(this).css("background-color", "red");
+    },
+    function() {
+        $(this).css("background-color", "white");
+    }
+);
 
 </script>
 </body>
