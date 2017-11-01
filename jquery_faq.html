@@ -52,8 +52,8 @@
     <dd class="invisible">At 1,932 feet deep, Crater Lake National Park in Oregon is the deepest lake in the U.S.</dd>
 </dl>
 
-<h3 class="listheading">Denali</h3>
-<ul class="starthidden">
+<h3 class="listheading1">Denali</h3>
+<ul class="starthidden1">
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
@@ -61,15 +61,15 @@
 </ul>
 
 <h3 class="listheading">Death Valley</h3>
-<ul class="starthidden">
+<ul class="starthidden2">
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
     <li class="lastitem">Fact 4</li>
 </ul>
 
-<h3 class="listheading">Yellowstone</h3>
-<ul class="starthidden">
+<h3 class="listheading3">Yellowstone</h3>
+<ul class="starthidden3">
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
@@ -113,9 +113,19 @@
         $("#hidethis").hide();
     });
 
-    $(".listheading").click(function(e) {
+    $(".listheading1").click(function(e) {
         e.preventDefault();
-        $(".starthidden").slideToggle(2500);
+        $(".starthidden1").slideToggle(2500);
+    });
+
+    $(".listheading2").click(function(e) {
+        e.preventDefault();
+        $(".starthidden2").slideToggle(2500);
+    });
+
+    $(".listheading3").click(function(e) {
+        e.preventDefault();
+        $(".starthidden3").slideToggle(2500);
     });
 
 //    $( ".register" ).click(function() {
