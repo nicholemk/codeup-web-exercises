@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Questions</title>
-    <!--<style>-->
-        <!--.invisible =-->
-    <!--</style>-->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style>
+        /*.invisible =*/
+    </style>
+
 </head>
 <body>
 
-<div class="hideme">
-    <h1>Would you like to sign up for our newsletter?</h1>
-    <span>X</span>
+<div id="hidethis">
+    <h1>Would you like to sign up for our newsletter? <span class="hideme">X</span></h1>
 </div>
 
 <h2 class="register">Register for our site...</h2>
@@ -74,21 +77,16 @@
 </ul>
 
 
+<div class="alert alert-warning alert-dismissible fadethisout" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Alert!</strong> Page has loaded successfully.
+</div>
+
+
 <script src="js/jquery-2.2.4.js"></script>
 
 <script>
     "use strict";
-
-//    $(".invisible").click(function(e) {
-//        e.preventDefault();
-//        $("dd").toggleClass("invisible");
-//    });
-
-
-    $("#toggleanswersbutton").click(function(e) {
-        e.preventDefault();
-        $("dd").toggleClass("invisible");
-    })
 
 //    $("dt").click(function(event) {
 //        $(event.target).css("background-color", "yellow");
@@ -106,20 +104,28 @@
 //        $(event.target).last().css("background-color", "yellow");
 //    });
 
+    $("#toggleanswersbutton").click(function(e) {
+        e.preventDefault();
+        $("dd").toggleClass("invisible");
+    });
+
     $(".hideme").click(function(e) {
-        $(event.target).hide();
+        $("#hidethis").hide();
     });
 
-    $(".starthidden").click(function(e) {
-        $(".starthidden").show();
+    $(".listheading").click(function(e) {
+        e.preventDefault();
+        $(".starthidden").slideToggle(2500);
     });
 
-//    $("register").click(function() {
-//        $(".register").fadeIn(8000);
+//    $( ".register" ).click(function() {
+//        $(".register").delay(8000).fadeIn();
 //    })
 
-    $( ".register" ).click(function() {
-        $(".register").slideUp(300).delay(800).fadeIn(400);
+    $(".register").hide().delay(2000).fadeIn(2000);
+
+    $(".fadethisout").mouseover(function() {
+        $(".fadethisout").delay(800).fadeOut(800);
     })
 
 
