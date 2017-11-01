@@ -11,7 +11,7 @@
 
 <h1>What Do You Want To Know About National Parks?</h1>
 
-<h3><a id="toggle" href="">Show/Hide Answers</a></h3>
+<h3><a id="toggleanswersbutton" href="">Show/Hide Answers</a></h3>
 
 <dl>
     <dt>Yosemite National Park</dt>
@@ -47,7 +47,7 @@
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
-    <li>Fact 4</li>
+    <li class="lastitem">Fact 4</li>
 </ul>
 
 <h3 class="listheading">Death Valley</h3>
@@ -55,7 +55,7 @@
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
-    <li>Fact 4</li>
+    <li class="lastitem">Fact 4</li>
 </ul>
 
 <h3 class="listheading">Yellowstone</h3>
@@ -63,12 +63,8 @@
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
-    <li>Fact 4</li>
+    <li class="lastitem">Fact 4</li>
 </ul>
-
-
-
-
 
 
 <script src="js/jquery-2.2.4.js"></script>
@@ -76,10 +72,16 @@
 <script>
     "use strict";
 
-    $(".invisible").click(function(e) {
-        e.preventDefault();
+//    $(".invisible").click(function(e) {
+//        e.preventDefault();
+//        $("dd").toggleClass("invisible");
+//    });
+
+
+    $("#toggleanswersbutton").click(function(e) {
+//        e.preventDefault();
         $("dd").toggleClass("invisible");
-    });
+    })
 
     $("dt").click(function(event) {
         $(event.target).css("background-color", "yellow");
@@ -91,8 +93,13 @@
 
     $(".listitem").click(function(event) {
         $(event.target).css("background-color", "blue");
+    });
+
+    $(".lastitem").click(function(event) {
+        $(event.target).last().css("background-color", "yellow");
     })
 
+    highLightBtn.click()
 
 </script>
 </body>
