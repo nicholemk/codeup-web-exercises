@@ -9,6 +9,13 @@
 </head>
 <body>
 
+<div class="hideme">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+</div>
+
+<h2 class="register">Register for our site...</h2>
+
 <h1>What Do You Want To Know About National Parks?</h1>
 
 <h3><a id="toggleanswersbutton" href="">Show/Hide Answers</a></h3>
@@ -43,7 +50,7 @@
 </dl>
 
 <h3 class="listheading">Denali</h3>
-<ul>
+<ul class="starthidden">
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
@@ -51,7 +58,7 @@
 </ul>
 
 <h3 class="listheading">Death Valley</h3>
-<ul>
+<ul class="starthidden">
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
@@ -59,7 +66,7 @@
 </ul>
 
 <h3 class="listheading">Yellowstone</h3>
-<ul>
+<ul class="starthidden">
     <li class="listitem">Fact 1</li>
     <li>Fact 2</li>
     <li>Fact 3</li>
@@ -79,27 +86,43 @@
 
 
     $("#toggleanswersbutton").click(function(e) {
-//        e.preventDefault();
+        e.preventDefault();
         $("dd").toggleClass("invisible");
     })
 
-    $("dt").click(function(event) {
-        $(event.target).css("background-color", "yellow");
-    })
+//    $("dt").click(function(event) {
+//        $(event.target).css("background-color", "yellow");
+//    })
+//
+//    $(".listheading").click(function(event) {
+//        $(event.target).css("background-color", "yellow");
+//    })
+//
+//    $(".listitem").click(function(event) {
+//        $(event.target).css("background-color", "blue");
+//    });
+//
+//    $(".lastitem").click(function(event) {
+//        $(event.target).last().css("background-color", "yellow");
+//    });
 
-    $(".listheading").click(function(event) {
-        $(event.target).css("background-color", "yellow");
-    })
-
-    $(".listitem").click(function(event) {
-        $(event.target).css("background-color", "blue");
+    $(".hideme").click(function(e) {
+        $(event.target).hide();
     });
 
-    $(".lastitem").click(function(event) {
-        $(event.target).last().css("background-color", "yellow");
+    $(".starthidden").click(function(e) {
+        $(".starthidden").show();
+    });
+
+//    $("register").click(function() {
+//        $(".register").fadeIn(8000);
+//    })
+
+    $( ".register" ).click(function() {
+        $(".register").slideUp(300).delay(800).fadeIn(400);
     })
 
-    highLightBtn.click()
+
 
 </script>
 </body>
