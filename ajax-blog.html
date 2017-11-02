@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Blog</title>
+
+    <!--<style>-->
+        <!--<link href="css/bootstrap.css" rel="stylesheet">-->
+        <!--<link href="css/bootstrap-theme.css" rel="stylesheet">-->
+    <!--</style>-->
+
+</head>
+<body>
+    <h1>Welcome to the blog</h1>
+
+    <table id="products">
+        <thead>
+        <tr>
+            <td><strong>Title</strong></td>
+            <td><strong>Content</strong></td>
+            <td><strong>Categories</strong></td>
+            <td><strong>Date</strong></td>
+        </tr>
+        </thead>
+
+    <div id="posts">
+       <p>Here is a post</p>
+    </div>
+
+</body>
+<script src=""></script>
+
+<script>
+    (function () {
+        "use strict";
+
+        function updatePage() {
+            var ajaxRequest = $.ajax("data/blog.json");
+
+            ajaxRequest.done(function (data, status, jqXhr) {
+                console.log("test");
+                console.log(data);
+                buildHTML(data);
+            });
+        }
+
+        function buildHTML(data) {
+            var blogDetails = "";
+            for (var i = 0; i < data.length; i++){
+                blogDetails += "<tr>" +
+                    "<td>" + data[i].title + "</td>" +
+                    "<td>" + data[i].content + "</td>" +
+                    "<td>" + data[i].categories + "</td>" +
+                    "<td>" + data[i].date + "</td>" +
+                    "</tr>"
+            }
+            $("#insertPosts").html(blogDetails);
+        }
+
+
+//        $("#update").click(updatePage);
+
+    })();
+
+
+</script>
+
+</html>
