@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map Project</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Map</h1>
+
+    <h2>Location: San Antonio, TX</h2>
+
+    <table id="weathertable">
+        <thead>
+            <tr>
+                <tr>Condition: </tr>
+                <tr>Humidity: </tr>
+                <tr>Wind: </tr>
+                <tr>Pressure: </tr>
+            </tr>
+        </thead>
+        <tbody id="weatherbody">
+
+        </tbody>
+    </table>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    (function(){
+
+
+
+        $.get("http://api.openweathermap.org/data/2.5/weather", {
+            APPID: "74f2391380c9bd50923041a22ed9ea4a",
+            q:     "San Antonio, TX"
+        });
+
+
+        $.get("http://api.openweathermap.org/data/2.5/weather", {
+            APPID: "74f2391380c9bd50923041a22ed9ea4a",
+            q:     "San Antonio, TX",
+            units: "imperial"
+        }).done(function(data) {
+            console.log(data);
+        });
+
+        var request = $.get("data/weather.json");
+
+        function getWeather() {
+
+            request.fail(function (jqXhr, status, error) {
+                console.log("There was an error! Check the console for details");
+                console.log("response status: " + status);
+                console.log("Error object: " + error);
+            });
+
+            request.done(function (data) {
+                console.log(data);
+
+                $("#updateWeather").html("");
+
+                data.forEach(function(weather) {
+                    addRowToTable(weather);
+                });
+            });
+
+        };
+
+        function addRowToTable(weather) {
+
+            var htmlString = "";
+            htmlString += "<tr>";
+            htmlString += "<td>" + weather.coord + "</td>";
+            htmlString += "<td>" + weather.sys + "</td>";
+            htmlString += "<td>" + weather.clouds + "</td>";
+            htmlString += "<td>" + weather.base + "</td>";
+            htmlString += "</tr>";
+
+            $("#weatherbody").append(htmlString);
+        }
+
+//        $("#update").click(addWeatherToPage);
+
+//        addWeatherToPage();
+
+
+
+
+    })();
+</script>
+</body>
+</html>
+
+
+
+
+
+<!--weather API: 74f2391380c9bd50923041a22ed9ea4a-->
