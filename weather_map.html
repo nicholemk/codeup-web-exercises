@@ -1,92 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Weather Map Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    <title>Weather Map Project</title>
+
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
     <style>
+        #weatherHere{
+            text-align: center;
+            /*border: 1px solid black;*/
+        }
+
         body{
             background-color: lightblue;
+
+        }
+
+        h1{
+            text-align: center;
+            padding: 10px;
+        }
+
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+
+        .latlngboxes{
+            text-align: center;
+        }
+
+        ul{
+           list-style-type: none;
         }
     </style>
 </head>
+
+
+
+
 <body>
+
     <h1>Weather Map</h1>
 
-    <h2>Location: San Antonio, TX</h2>
+    <div id="weatherHere" class=".col-md-4">
 
-    <table id="weathertable">
-        <thead>
-            <tr>
-                <tr>Condition: </tr>
-                <tr>Humidity: </tr>
-                <tr>Wind: </tr>
-                <tr>Pressure: </tr>
-            </tr>
-        </thead>
-        <tbody id="weatherbody">
+    </div>
 
-        </tbody>
-    </table>
+    <hr>
+
+    <form method="get" class="latlngboxes">
+            <ul>
+                <li>
+                    <label for="latitude">Latitude</label>
+                    <input type="text" id="latitude" placeholder="e.g. 42.9150747" required>
+                </li>
+
+                <li>
+                    <label for="longitude">Longitude</label>
+                    <input type="text" id="longitude" placeholder="e.g. -77.784323" required>
+                </li>
+                <li>
+                    <label for="city-search">City Name</label>
+                    <input type="text" id="city-search" placeholder="e.g. Rochester, NY">
+                </li>
+            </ul>
+
+        <button>Get Weather</button>
+    </form>
 
 
-<script src="js/jquery-2.2.4.js"></script>
-<script>
+
+    <hr>
+
+
+    <div id="map-canvas"></div>
+
+
+
+
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Fq2UspbtyX0spv_22WGd4ChnxFIQREQ"></script>
+
+    <script>
     (function(){
 
-
-
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
-            APPID: "74f2391380c9bd50923041a22ed9ea4a",
-            q:     "San Antonio, TX"
-        });
-
-
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
-            APPID: "74f2391380c9bd50923041a22ed9ea4a",
-            q:     "San Antonio, TX",
-            units: "imperial"
+        $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+            APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+            q: "San Antonio, TX",
+            units: "imperial",
+            cnt: 3
         }).done(function(data) {
-            console.log(data);
+            buildWeather(data);
         });
-
-        var request = $.get("data/weather.json");
 
         function getWeather() {
 
-            request.fail(function (jqXhr, status, error) {
+            $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+                APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+                q: "San Antonio, TX",
+                units: "imperial",
+                cnt: 3
+
+            }).done(function (data) {
+                console.log(data);
+
+                buildWeather(data);
+
+            }).fail(function (jqXhr, status, error) {
                 console.log("There was an error! Check the console for details");
                 console.log("response status: " + status);
                 console.log("Error object: " + error);
             });
 
-            request.done(function (data) {
-                console.log(data);
-
-                $("#updateWeather").html("");
-
-                data.forEach(function(weather) {
-                    addRowToTable(weather);
-                });
-            });
-
         };
 
-        function addRowToTable(weather) {
+//        getWeather();
 
+        function buildWeather(data) {
             var htmlString = "";
-            htmlString += "<tr>";
-            htmlString += "<td>" + weather.coord + "</td>";
-            htmlString += "<td>" + weather.sys + "</td>";
-            htmlString += "<td>" + weather.clouds + "</td>";
-            htmlString += "<td>" + weather.base + "</td>";
-            htmlString += "</tr>";
 
-            $("#weatherbody").append(htmlString);
+            for (var i = 0; i < 3; i++) {
+                htmlString += "<h3>" + "Day " + (i+1) + "</h3>";
+                htmlString += "<p>" + "Temperature: " + data.list[i].temp.day + "</p>";
+                htmlString += "<p>" + "Pressure: " + data.list[i].pressure + "</p>";
+                htmlString += "<p>" + "Humidity: " + data.list[i].humidity + "</p>";
+            }
+
+            $("#weatherHere").html(htmlString);
         }
 
-//        $("#update").click(addWeatherToPage);
 
-//        addWeatherToPage();
+
+
+        var myLatLng = new google.maps.LatLng(29.4178, -98.48821);
+
+        var mapOptions = {
+            zoom: 9,
+            center: myLatLng
+        };
+
+        function initMap(optionsObject) {
+            return new google.maps.Map(document.getElementById("map-canvas"), optionsObject);
+        }
+
+        var map = initMap(mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            draggable: true
+        });
+
+        function toggleBounce() {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
+        toggleBounce();
+
+        google.maps.event.addListener(marker, "dragend", function (event) {
+            var lat = this.getPosition().lat();
+            var long = this.getPosition().lng();
+            $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+                APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+                units: "imperial",
+                cnt: 3,
+                lat: lat,
+                lon: long
+            }).done(function(data) {
+                buildWeather(data);
+            });
+
+        })
 
 
 
