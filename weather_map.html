@@ -16,7 +16,6 @@
             background-color: lightblue;
             font-family: Tahoma, sans-serif;
 
-
         }
 
         h1{
@@ -50,29 +49,29 @@
 
     </div>
 
-    <hr>
+    <!--<hr>-->
 
-    <form method="get" class="latlngboxes">
-            <ul>
-                <li>
-                    <label for="latitude">Latitude</label>
-                    <input type="text" id="latitude" placeholder="e.g. 42.9150747" required>
-                </li>
+    <!--<form method="get" id="latlngboxes">-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<label for="latitude">Latitude</label>-->
+                    <!--<input type="text" id="latitude" placeholder="e.g. 42.9150747" required>-->
+                <!--</li>-->
 
-                <li>
-                    <label for="longitude">Longitude</label>
-                    <input type="text" id="longitude" placeholder="e.g. -77.784323" required>
-                </li>
-                <li>
-                    <label for="city-search">City Name</label>
-                    <input type="text" id="city-search" placeholder="e.g. Rochester, NY">
-                </li>
-            </ul>
+                <!--<li>-->
+                    <!--<label for="longitude">Longitude</label>-->
+                    <!--<input type="text" id="longitude" placeholder="e.g. -77.784323" required>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<label for="city-search">City Name</label>-->
+                    <!--<input type="text" id="city-search" placeholder="e.g. Rochester, NY">-->
+                <!--</li>-->
+            <!--</ul>-->
 
-        <button>Get Weather</button>
-    </form>
+        <!--<button>Get Weather</button>-->
+    <!--</form>-->
 
-    <hr>
+    <!--<hr>-->
 
 
     <div id="map-canvas"></div>
@@ -86,18 +85,6 @@
 
     <script>
     (function(){
-
-
-//        const form = document.getElementByClassNAme(".latlngboxes")[0];
-//        const data = getFormDataAsJSON(form);
-
-
-
-
-
-
-
-
 
         $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
             APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
@@ -144,13 +131,10 @@
             $("#weatherHere").html(htmlString);
         }
 
-
-
-
         var myLatLng = new google.maps.LatLng(29.4178, -98.48821);
 
         var mapOptions = {
-            zoom: 9,
+            zoom: 7,
             center: myLatLng
         };
 
@@ -189,8 +173,21 @@
             }).done(function(data) {
                 buildWeather(data);
             });
-
         })
+
+
+        function ConvertFormToJSON(form){
+            var array = jQuery(form).serializeArray();
+            var json = {};
+
+            jQuery.each(array, function() {
+                json[this.name] = this.value || '';
+            });
+
+            return json;
+        }
+
+        console.log(latitude, longitude);
 
     })();
 </script>
