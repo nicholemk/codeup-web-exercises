@@ -94,32 +94,34 @@
         ]
 
 
-//        function buildMovieHTML(obj) {
-//            var outputHTML = "<ul>";
-//            outputHTML += "<li>" + obj.name + "</li>";
-//            outputHTML += "<li>" + obj.year + "</li>";
-//            outputHTML += "<li>" + obj.genre + "</li>";
-//            outputHTML += "</ul>";
-//            return outputHTML;
-//        }
+        function buildMovieHTML(obj) {
+            let outputHTML = "<ul>";
+            outputHTML += "<li>" + obj.name + "</li>";
+            outputHTML += "<li>" + obj.year + "</li>";
+            outputHTML += "<li>" + obj.genre + "</li>";
+            outputHTML += "</ul>";
+            return outputHTML;
+        }
+
+        const buildMovieHTML = ({name, year, genre}) => `<ul><li>${name}</li>li><li>${year}</li>`
 
 
 
-//
-//        var listItems = document.getElementsByClassName('movie');
-//
-//        var showBtn = document.getElementById("showBtn");
-//        showBtn.addEventListener("click", function() {
-//            for (var i = 0; i < listItems.length; i += 1) {
-//                listItems[i].innerHTML = buildMovieHTML(movies[i]);
-//            }
-//        });
-//
-//        document.addEventListener("keydown", function() {
-//            console.log("boom");
-//        });
-//
-//        $('.movie').addClass("boom");
+
+        const listItems = document.getElementsByClassName('movie');
+
+        const showBtn = document.getElementById("showBtn");
+        showBtn.addEventListener("click", function() {
+            for (let i = 0; i < listItems.length; i += 1) {
+                listItems[i].innerHTML = buildMovieHTML(movies[i]);
+            }
+        });
+
+        document.addEventListener("keydown", function() {
+            console.log("boom");
+        });
+
+        $('.movie').addClass("boom");
 
     })();
 
