@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises </title>
+</head>
+<body>
+
+<h1>PRomises </h1>
+
+<!--<script src=></script>-->
+<script>
+    "use strict"
+//
+    function wait() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (Math.random() > 0.1) {
+                    resolve('1 second');
+                } else {
+                    reject('3 seconds');
+                }
+            }, 1000);
+        });
+    }
+
+    const request = wait();
+//    console.log(request); // pending promise
+//    request.then(data => console.log('You will see this after', data));
+//    // if resolved, will log "Promise resolved!" and "Here is your data: ..."
+//    request.catch(error => console.log('You MIGHT see this after ', error));
+//    // if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
+    wait(1000).then(() => console.log('You\'ll see this after 1 second'));
+    wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+
+//    function wait(milliseconds) {
+//        return new Promise((resolve, reject) => {
+//            setTimer(() => {
+//                resolve('1 second');
+//                reject('3 seconds');
+//            }, 1000);
+//        });
+//    }
+//
+//    console.log(wait);
+
+
+
+    const lastCommitTime(username) => {
+        const url = "https://api.github.com/users/" + username;
+
+    fetch(url, {headers: {'Authorization': '7ee46b8c0107b2700c7209b4ab7b851f161dd647'}})
+        .then(response => response.json())
+        .then(users => {
+            users.map(user => user.login)
+        })
+        .catch(() => console.log("something went wrong"));
+
+    };
+
+
+
+
+
+
+</script>
+</body>
+</html>
